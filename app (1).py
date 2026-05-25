@@ -35,7 +35,7 @@ def init_gemini(manual_key=None):
 # --- 3. AI LOGIC ---
 def fetch_ai_json(prompt):
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-3.1-flash-lite')
         response = model.generate_content(prompt, generation_config={'response_mime_type': 'application/json'})
         return json.loads(response.text)
     except Exception as e:
